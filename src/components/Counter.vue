@@ -7,22 +7,24 @@
     <div className="btn">
     <button @click="increment">Increment</button>
     <button @click="decrement">Decrement</button>
-   <button @click="handleReset">SetValue</button>
-  <!-- <input v-model="updateMessage" >-->
-   <!-- <input :value="message" @input="updateMessage"> -->
+   <button @click="handleReset">Reset</button>
+  <input v-model="setValue" @change="handlesetValue">
+  
     </div>
   </div>
 </template>
 <script>
 import { mapState } from 'vuex';
 export default {
+  data(){
+ return{
+   setValue:0
+ }
+  },
  computed: {
    count() {
      return this.$store.state.count;
    },
-  // ...mapState({
-    // message: state => state.count 
-  // }),
   
  },
  methods: {
@@ -34,16 +36,13 @@ export default {
    },
     handleReset() {
      this.$store.commit("setReset")
-   }
- }
-  //updateMessage (e) {
-    // this.$store.commit('updateMessage', e.target.value = Number(e.target.value))
-  // },
-  // setCount() {
-    // this.$store.commit("setCount", this.set)
-  // },
+   },
+    handlesetValue(){
+     this.$store.dispatch("asyncsetValue", Number(this.setValue))
+  }
 
 }
+ }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
