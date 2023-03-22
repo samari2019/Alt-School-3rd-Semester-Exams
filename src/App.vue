@@ -18,11 +18,12 @@
   color: #2c3e50;
 }
 body{
- 
- background-image: linear-gradient(to right, rgba(150, 117, 55, 0.5),rgba(255, 175, 175, 0.63));
+ background-color: rgba(165, 255, 255, 0.411)
+/* background-image: linear-gradient(to right, rgba(43, 192, 155, 0.5),rgba(255, 175, 175, 0.63));*/
 }
 nav {
   padding: 30px;
+
 }
 
 nav a {
